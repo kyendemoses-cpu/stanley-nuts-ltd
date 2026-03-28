@@ -1,11 +1,11 @@
-// Contact form handler
-function handleSubmit(event) {
-  event.preventDefault();
-  document.getElementById('form-success').style.display = 'block';
-  event.target.reset();
-  setTimeout(() => {
-    document.getElementById('form-success').style.display = 'none';
-  }, 6000);
+// Auto-clear form after Formspree submit
+const form = document.querySelector('.contact-form');
+if (form) {
+  form.addEventListener('submit', function() {
+    setTimeout(() => {
+      form.reset();
+    }, 500);
+  });
 }
 
 // Fade in on scroll
