@@ -663,142 +663,58 @@ footer a:hover { color: var(--rust); }
 /* =====================
    MOBILE RESPONSIVE
    ===================== */
-@media (max-width: 768px) {
-
-  /* NAV */
+@media /* NAV */
   nav {
     padding: 1rem 1.5rem;
   }
 
   nav ul {
-    gap: 1.2rem;
-  }
-
-  nav a {
-    font-size: 0.75rem;
-  }
-
-  /* HERO */
-  #hero {
-    grid-template-columns: 1fr;
-    padding-top: 80px;
-  }
-
-  .hero-left {
-    padding: 3rem 1.5rem;
-  }
-
-  .hero-right {
-    padding: 3rem 1.5rem;
-    min-height: 300px;
-  }
-
-  .hero-stats {
-    gap: 1.5rem;
-  }
-
-  .stat-num {
-    font-size: 2rem;
-  }
-
-  .hero-cta-row {
+    display: none;
     flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .btn-primary,
-  .btn-ghost {
-    width: 100%;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(10,10,10,0.98);
     justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    z-index: 99;
   }
 
-  /* PRODUCTS */
-  #products {
-    padding: 4rem 1.5rem;
+  nav ul.open {
+    display: flex;
   }
 
-  .products-header {
+  nav ul a {
+    font-size: 1.3rem;
+  }
+
+  .nav-hamburger {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 101;
   }
 
-  .products-header p {
-    max-width: 100%;
+  .nav-hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--offwhite);
+    transition: all 0.3s;
   }
 
-  .products-grid {
-    grid-template-columns: 1fr;
+  .nav-hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
   }
 
-  /* PROCESS */
-  #process {
-    padding: 3rem 1.5rem;
+  .nav-hamburger.open span:nth-child(2) {
+    opacity: 0;
   }
 
-  .process-inner {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .nav-hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
   }
-
-  .process-step {
-    padding: 0 0 2rem 0;
-    border-right: none;
-    border-bottom: 1px solid rgba(10,10,10,0.2);
-  }
-
-  .process-step:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-
-  /* ABOUT */
-  #about {
-    grid-template-columns: 1fr;
-    padding: 4rem 1.5rem;
-    gap: 3rem;
-  }
-
-  .about-badge {
-    bottom: 1rem;
-    left: 1rem;
-  }
-
-  /* CONTACT */
-  #contact {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-left {
-    padding: 4rem 1.5rem;
-    border-right: none;
-    border-bottom: 1px solid rgba(196,65,12,0.2);
-  }
-
-  .contact-right {
-    padding: 4rem 1.5rem;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-
-  .submit-btn {
-    width: 100%;
-    text-align: center;
-  }
-
-  /* FOOTER */
-  footer {
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 2rem 1.5rem;
-    text-align: center;
-  }
-
-  footer ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-  }
-}

@@ -30,3 +30,18 @@ window.addEventListener('scroll', () => {
   document.querySelector('nav').style.borderBottomColor = window.scrollY > 60
     ? 'rgba(196,65,12,0.4)' : 'rgba(196,65,12,0.25)';
 });
+const toggle = document.getElementById('navToggle');
+const navUl = document.querySelector('nav ul');
+
+toggle.addEventListener('click', () => {
+  toggle.classList.toggle('open');
+  navUl.classList.toggle('open');
+});
+
+// Close menu when a link is clicked
+navUl.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    toggle.classList.remove('open');
+    navUl.classList.remove('open');
+  });
+});
