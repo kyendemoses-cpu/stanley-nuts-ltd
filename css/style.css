@@ -663,13 +663,20 @@ footer a:hover { color: var(--rust); }
 /* =====================
    MOBILE RESPONSIVE
    ===================== */
-@media /* NAV */
+@media @media (max-width: 768px) {
+
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* NAV */
   nav {
     padding: 1rem 1.5rem;
   }
 
   nav ul {
-    display: none;
+    display: none !important;
     flex-direction: column;
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -678,14 +685,16 @@ footer a:hover { color: var(--rust); }
     align-items: center;
     gap: 2.5rem;
     z-index: 99;
+    list-style: none;
   }
 
   nav ul.open {
-    display: flex;
+    display: flex !important;
   }
 
   nav ul a {
     font-size: 1.3rem;
+    color: var(--offwhite);
   }
 
   .nav-hamburger {
@@ -697,6 +706,7 @@ footer a:hover { color: var(--rust); }
     cursor: pointer;
     padding: 4px;
     z-index: 101;
+    position: relative;
   }
 
   .nav-hamburger span {
@@ -718,3 +728,5 @@ footer a:hover { color: var(--rust); }
   .nav-hamburger.open span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
   }
+
+  /* rest of your existing mobile styles below... */
